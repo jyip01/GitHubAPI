@@ -16,7 +16,7 @@ function displayResults(responseJson) {
         <h4>User: <span class="user">${user}</span></h4>
         <h4><span class="user">Repos: ${responseJson.length}</span></h4>
         <ul class="results-list"></ul>
- 
+    `
     $('.js-results').append(userinfo)
     //loop through results and make a list of repos, including link and description
     for (let i = 0; i < responseJson.length; i++) {
@@ -29,7 +29,9 @@ function displayResults(responseJson) {
     }
     //removes hidden class to display results
     $('.js-results').removeClass('hidden')
+
 }
+
 //Fetches data from API, converts and passes data to be displayed in DOM
 function getRepos(username) {
     console.log('getRepos ran');
@@ -63,7 +65,7 @@ function displayError(error) {
 }
 //This function uses random to select the text of the Search Button
 function getSearchPhrase() {
-    return (['Search', 'Find','Look up','Go','Check','Push this button','Don\'t push this button'])[Math.floor(Math.random() * 7)];
+    return (['Search', 'Find', 'Gitty up GitHub','Look up','Go','Check','Push this button','Don\'t push this button'])[Math.floor(Math.random() * 8)];
 }
 
 //Event listener for submit event
